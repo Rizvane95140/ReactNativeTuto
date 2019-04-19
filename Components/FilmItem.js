@@ -1,7 +1,8 @@
 // Components/FilmItem.js
 
 import React from 'react'
-import { StyleSheet, View, Text, Image } from 'react-native'
+import { StyleSheet, View, Text, Image, ActivityIndicator } from 'react-native'
+import { getImageFromApi } from '../API/TMDBApi'
 
 class FilmItem extends React.Component {
     render() {
@@ -11,7 +12,7 @@ class FilmItem extends React.Component {
             <View style={styles.main_container}>
                 <Image
                     style={styles.image}
-                    source={{uri: "image"}}
+                    source={{uri: getImageFromApi(film.poster_path)}}
                 />
                 <View style={styles.content_container}>
                     <View style={styles.header_container}>
@@ -39,8 +40,7 @@ const styles = StyleSheet.create({
     image: {
         width: 120,
         height: 180,
-        margin: 5,
-        backgroundColor: 'gray'
+        margin: 5
     },
     content_container: {
         flex: 1,
