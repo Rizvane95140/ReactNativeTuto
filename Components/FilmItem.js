@@ -1,5 +1,4 @@
 // Components/FilmItem.js
-
 import React from 'react'
 import { StyleSheet, View, Text, Image, ActivityIndicator } from 'react-native'
 import { getImageFromApi } from '../API/TMDBApi'
@@ -21,7 +20,6 @@ class FilmItem extends React.Component {
                     </View>
                     <View style={styles.description_container}>
                         <Text style={styles.description_text} numberOfLines={6}>{film.overview}</Text>
-                        {/* La propriété numberOfLines permet de couper un texte si celui-ci est trop long, il suffit de définir un nombre maximum de ligne */}
                     </View>
                     <View style={styles.date_container}>
                         <Text style={styles.date_text}>Sorti le {film.release_date}</Text>
